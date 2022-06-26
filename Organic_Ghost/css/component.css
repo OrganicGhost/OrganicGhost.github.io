@@ -1,0 +1,443 @@
+@import "http://fonts.googleapis.com/css?family=Lato:300,400,700";
+@font-face {
+  font-family: 'Azonix';
+  src: url("../fonts/Azonix/Azonix.otf");
+}
+
+@font-face {
+  font-family: 'Cabin';
+  src: url("../fonts/Cabin/Cabin-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'JP';
+  src: url("../fonts/Noto_Sans_JP/NotoSansJP-Bold.otf");
+}
+
+/* line 4, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid-gallery ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 9, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid-gallery figure {
+  margin: 0;
+}
+
+/* line 11, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid-gallery figure img {
+  display: block;
+  width: 100%;
+}
+
+/* line 17, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid-gallery figcaption h3 {
+  margin: 0;
+  padding: 0 0 0.5em;
+}
+
+/* line 21, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid-gallery figcaption p {
+  margin: 0;
+}
+
+/* line 26, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid-wrap {
+  max-width: 69em;
+  margin: 0 auto;
+  padding: 0 1em 1.875em;
+}
+
+/* line 31, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid {
+  margin: 0 auto;
+}
+
+/* line 33, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid li {
+  width: 25%;
+  float: left;
+  cursor: pointer;
+}
+
+/* line 38, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  clip-path: polygon(96% 0, 100% 0.5em, 100% 100%, 0 100%, 0 0);
+  position: relative;
+  margin: 15px;
+  overflow: hidden;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  /*flash*/
+}
+
+/* line 50, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+
+/* line 64, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure::after {
+  content: ' view project >';
+  background-color: #b02324;
+  height: 50px;
+  display: block;
+  text-align: right;
+  position: absolute;
+  opacity: 0;
+  font-family: Azonix;
+  vertical-align: baseline;
+  left: -100%;
+  padding: 20px 25px 30px 0px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+/* line 80, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure figcaption {
+  background: black;
+  padding: 25px;
+  position: relative;
+  margin-top: 0px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+/* line 89, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure:hover {
+  clip-path: polygon(90% 0, 100% 1em, 100% 100%, 0 100%, 0 0);
+}
+
+/* line 91, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure:hover img {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}
+
+/* line 96, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure:hover figcaption {
+  background: #d63031;
+  margin-top: -50px;
+  -webkit-box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* line 105, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure:hover::before {
+  -webkit-animation: shine .75s;
+  animation: shine .75s;
+}
+
+/* line 110, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.grid figure:hover::after {
+  opacity: 1;
+  position: relative;
+  left: 0;
+}
+
+/* line 120, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.services {
+  display: block;
+  width: 100%;
+}
+
+/* line 123, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.services > span {
+  display: block;
+  width: 100%;
+}
+
+/* line 133, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+/* line 148, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow ul {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 150px);
+  transform: translate3d(0, 0, 150px);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+/* line 159, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow ul.animatable li {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+/* line 164, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow li {
+  width: 1500px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: -0 0 0 -750px;
+  visibility: hidden;
+  background: black;
+}
+
+/* line 173, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+/* line 185, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow li.show {
+  visibility: visible;
+  overflow-y: scroll;
+}
+
+/* line 190, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow li.current:after {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+/* line 197, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow figure {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 201, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow figcaption {
+  padding: 20px;
+}
+
+/* line 203, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow figcaption h3 {
+  font-weight: 300;
+  font-size: 200%;
+}
+
+/* line 209, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow nav span {
+  position: fixed;
+  z-index: 1000;
+  color: #59656c;
+  text-align: center;
+  padding: 223px 3%;
+  cursor: pointer;
+  font-size: 2.2em;
+}
+
+/* line 218, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow nav span.nav-prev {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 223, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow nav span.nav-next {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+}
+
+/* line 229, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow nav span.nav-close {
+  top: 0;
+  right: 0;
+  padding: 0.5em 1em;
+  color: #31373a;
+}
+
+/* line 238, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow-open .slideshow {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+/* line 243, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.slideshow-open .slideshow ul {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 274, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+span.nav-prev:before {
+  content: "\e601";
+}
+
+/* line 279, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+span.nav-next:before {
+  content: "\e600";
+}
+
+/* line 284, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+span.nav-close:before {
+  content: "\e602";
+}
+
+/* line 288, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.info-keys {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 60px;
+  font-size: 8px;
+  padding-top: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* line 299, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.info-keys:before {
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  text-align: center;
+  line-height: 14px;
+  font-size: 12px;
+  left: 10px;
+  content: "\e603";
+}
+
+/* line 311, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+.info-keys:after {
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  text-align: center;
+  line-height: 14px;
+  font-size: 12px;
+  right: 10px;
+  content: "\e604";
+}
+
+@media screen and (max-width: 1500px) {
+  /* line 327, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .grid li {
+    width: 33.3%;
+  }
+  /* line 332, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .slideshow li {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+  /* line 339, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .slideshow li figure img {
+    width: auto;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  /* line 347, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .slideshow nav span {
+    font-size: 1.8em;
+    padding: 0.3em;
+  }
+  /* line 351, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .slideshow nav span.nav-close {
+    font-size: 1.8em;
+    padding: 0.3em;
+  }
+  /* line 357, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .info-keys {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 35em) {
+  /* line 363, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .grid li {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 24em) {
+  /* line 370, /Users/richardharrison/Desktop/GridGallery-Dev/scss/component.scss */
+  .grid li {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=../css/component.map */
