@@ -1,4 +1,20 @@
+@font-face {
+	font-family: 'fontawesome';
+	src:url('../fonts/fontawesome/fontawesome.eot?-e43dk9');
+	src:url('../fonts/fontawesome/fontawesome.eot?#iefix-e43dk9') format('embedded-opentype'),
+		url('../fonts/fontawesome/fontawesome.woff?-e43dk9') format('woff'),
+		url('../fonts/fontawesome/fontawesome.ttf?-e43dk9') format('truetype'),
+		url('../fonts/fontawesome/fontawesome.svg?-e43dk9#fontawesome') format('svg');
+	font-weight: normal;
+	font-style: normal;
+} /* Made with http://icomoon.io/app */
+
 @import "variables";
+
+.logo {
+    max-width: 960px;
+    margin: auto;
+}
 
 .grid-gallery {
 	ul {
@@ -34,18 +50,27 @@
 		width: 25%;
 		float: left;
 		cursor: pointer;
+
+        figure {border-radius: 1em 0 0 0}
+        
+        &:nth-child(2n) figure {border-radius: 0 1em 0 0}
+        &:nth-child(3n) figure {border-radius: 1em 1em 0 0}
+        &:nth-child(5n) figure {border-radius: 1em 0 0 0}
+        &:nth-child(7n) figure {border-radius: 0 1em 0 0}
+        &:nth-child(11n) figure {border-radius: 1em 1em 0 0}
+        &:nth-child(13n) figure {border-radius: 1em 0 0 0}
+        &:nth-child(17n) figure {border-radius: 0 1em 0 0}
 	}
 	figure {
         -webkit-transition: all 0.2s ease-in;
         transition: all 0.2s ease-in;         
-
-        clip-path: polygon(96% 0, 100% 0.5em, 100% 100%, 0 100%, 0 0);
-
+        
         position: relative;
 		margin: 15px;
         overflow: hidden;
 		-webkit-transition: opacity 0.2s;
 		transition: opacity 0.2s;
+
         /*flash*/
         &::before {
             position: absolute;
@@ -62,7 +87,7 @@
             transform: skewX(-25deg);
         }
         &::after {
-            content: ' view project >';
+            content: ' view project ';
             background-color: darken($red,10%);
             height: 50px;
             display: block;
@@ -87,7 +112,6 @@
         }        
 
         &:hover {
-            clip-path: polygon(90% 0, 100% 1em, 100% 100%, 0 100%, 0 0);
             img {
                 opacity: 1;
                 -webkit-animation: flash 1.5s;
@@ -113,7 +137,6 @@
                 left: 0;
             }             
         }
-        
 	}
 }
 
@@ -121,12 +144,38 @@
     display:block;
     width: 100%;
     > span {
-        display:block;
+        display:inline-flex;
         width: 100%;  
-//        &::before{
-//            content:'HEY';
-//            font-family: 'JP';
-//        }
+        &::before{
+            display: inline-flex;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;   
+            font: var(--fa-font-solid);
+            width: 1.5em;
+            text-align: center;
+            margin-right: 0.5em;
+            margin-bottom: 0.4em;
+        }
+        &.design {
+            &::before{
+                content: "\f247";
+            }
+        }           
+        &.development {
+            &::before{
+                content: "\f5fc";
+            }
+        }  
+        &.branding {
+            &::before{
+                content: "\f02a";
+            }
+        }           
+        &.graphic {
+            &::before{
+                content: "\f53f";
+            }
+        }        
     }
 }
 
@@ -246,30 +295,30 @@
 		}
 	}
 }
-//.icon {
-//	&:before {
-//		font-family: 'fontawesome';
-//		speak: none;
-//		font-style: normal;
-//		font-weight: normal;
-//		font-variant: normal;
-//		text-transform: none;
-//		line-height: 1;
-//		-webkit-font-smoothing: antialiased;
-//		-moz-osx-font-smoothing: grayscale;
-//	}
-//	&:after {
-//		font-family: 'fontawesome';
-//		speak: none;
-//		font-style: normal;
-//		font-weight: normal;
-//		font-variant: normal;
-//		text-transform: none;
-//		line-height: 1;
-//		-webkit-font-smoothing: antialiased;
-//		-moz-osx-font-smoothing: grayscale;
-//	}
-//}
+.icon {
+	&:before {
+		font-family: 'fontawesome';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	&:after {
+		font-family: 'fontawesome';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
 span.nav-prev {
 	&:before {
 		content: "\e601";

@@ -1,0 +1,22 @@
+.logo {
+    position: relative;
+}
+.logo-right , .logo-left {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.logo-right {
+    animation: fadeIn 10s;
+}
+
+.logo-left {
+    animation: fadeIn 5s;
+    display: none;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
