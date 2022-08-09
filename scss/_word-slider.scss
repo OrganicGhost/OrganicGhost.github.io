@@ -1,0 +1,56 @@
+header {
+    padding: 0 1.875em;
+    text-align: center;
+}
+
+.word-carousel {
+    animation: fadeInMouse 9.5s;
+    font-size: 4em;
+    
+    div {
+        overflow: hidden;
+        position: relative;
+        height: 2.1875em;
+        padding-top: 0.625em;
+        margin-top: -0.625em;
+        ul {
+            padding: 0;
+        }
+        li {
+            padding: 0;
+            height: 2.8125em;
+            margin-bottom: 2.8125em;
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 66.25em) {
+    .word-carousel {
+        display: block;
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 35.75em) {
+    .word-carousel {
+        font-size: 6vw;
+    }
+}
+
+.word-carousel-animation { 
+    animation: word-carousel-animation 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; 
+}
+
+@keyframes word-carousel-animation {
+    0% { margin-top: -22.5em; }
+    5% { margin-top: -16.875em; }
+    25% { margin-top: -16.875em; }
+    30% { margin-top: -11.25em; }
+    50% { margin-top: -11.25em; }
+    55% { margin-top: -5.625em; }
+    75% { margin-top: -5.625em; }
+    80% { margin-top: 0em; }
+    99.99% { margin-top: 0em; }
+    100% { margin-top: -22.5em; }
+}

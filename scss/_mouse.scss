@@ -1,0 +1,45 @@
+.mouse {
+    max-width: 69em;
+    margin: auto;
+    font-size:5em;
+    text-align: center;
+    height: 1.5em;
+    padding: 0 0 1.875em 0;
+    animation: fadeInMouse 10s;
+    i {
+        animation: jumpInfinite 5s infinite;
+    }
+}
+
+@keyframes fadeInMouse {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+//@keyframes jumpInfinite {
+//  0% {
+//    margin-top: 0;
+//  }
+//  50% {
+//    margin-top: 20px;
+//  }
+//  100% {
+//    margin-top: 0;
+//  }
+//}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  10% {
+    margin-top: 20px;
+  }
+  20% {
+    margin-top: 0;
+  }
+    100% {
+    margin-top: 0;
+  }
+}

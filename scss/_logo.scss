@@ -1,19 +1,13 @@
 .logo {
     position: relative;
+    margin: 0 auto 1.875em;
 }
-.logo-right , .logo-left {
+
+.logo-hand {
+    animation: fadeIn 6s;
     position: absolute;
     left: 0;
-    z-index: -1;
-}
-
-.logo-right {
-    animation: fadeIn 10s;
-}
-
-.logo-left {
-    animation: fadeIn 5s;
-    display: none;
+    z-index: -1;    
 }
 
 @keyframes fadeIn {
