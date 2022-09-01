@@ -52,8 +52,7 @@ h2 {
 h3 {
     font-size:1.2em;
 }
-@media screen and (max-width: 42.125em) {
-  }
+
 @media screen and (max-width: 34em) {
     body {
         font-size:0.8em;
@@ -133,7 +132,7 @@ a {
     width: 100%;
     min-width: 100%;
     display: block;
-    min-height: 1px;
+    min-height: 3000px;
 }
 
 .black-bg {
