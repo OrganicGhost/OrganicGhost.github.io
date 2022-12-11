@@ -201,6 +201,7 @@
 		margin: -0 0 0 -750px;
 		visibility: hidden;
         background: black;
+        text-align: center;
 		&:after {
 			content: '';
 			position: absolute;
@@ -216,6 +217,7 @@
 	li.show {
 		visibility: visible;
         overflow-y: scroll;
+        text-align: center;
 	}
 	li.current {
 		&:after {
